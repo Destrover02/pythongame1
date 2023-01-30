@@ -46,5 +46,5 @@ python:
   - ls bin/ -l
   - эхо "ТОДО"
   - gem установить dpl --pre
-  - DPL выпускает --token $GITHUB_TOKEN --file "bin/myapp-0.3-arm64-v8a,armeabi-v7a-debug.apk" --tag_name "v.0.3"
+  - DPL выпускает --token $GITHUB_TOKEN --file "bin/myapp-0.3-arm64-v8a-debug.apk" --tag_name "v.0.3"
   - эхо "ОК"
