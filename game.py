@@ -1,37 +1,35 @@
 import pygame
 
-image_path = '/data/data/com.andrei.myapp/files/app/'
-
 clock = pygame.time.Clock()
 
 pygame.init()
 screen = pygame.display.set_mode((600, 450))
 pygame.display.set_caption("Andrey's game")
-icon = pygame.image.load(image_path + "other/icon.png").convert_alpha()
+icon = pygame.image.load("other/icon.png").convert_alpha()
 pygame.display.set_icon(icon)
 
-bg = pygame.image.load(image_path + 'other/fon.png').convert().convert_alpha()
+bg = pygame.image.load('other/fon.png').convert().convert_alpha()
 walk_left = [
-    pygame.image.load(image_path + 'other/player_left/player1.png').convert_alpha(),
-    pygame.image.load(image_path + 'other/player_left/player2.png').convert_alpha(),
-    pygame.image.load(image_path + 'other/player_left/player3.png').convert_alpha(),
-    pygame.image.load(image_path + 'other/player_left/player4.png').convert_alpha(),
-    pygame.image.load(image_path + 'other/player_left/player5.png').convert_alpha(),
-    pygame.image.load(image_path + 'other/player_left/player6.png').convert_alpha(),
-    pygame.image.load(image_path + 'other/player_left/player7.png').convert_alpha(),
-    pygame.image.load(image_path + 'other/player_left/player8.png').convert_alpha(),
-    pygame.image.load(image_path + 'other/player_left/player9.png').convert_alpha(),
+    pygame.image.load('other/player_left/player1.png').convert_alpha(),
+    pygame.image.load('other/player_left/player2.png').convert_alpha(),
+    pygame.image.load('other/player_left/player3.png').convert_alpha(),
+    pygame.image.load('other/player_left/player4.png').convert_alpha(),
+    pygame.image.load('other/player_left/player5.png').convert_alpha(),
+    pygame.image.load('other/player_left/player6.png').convert_alpha(),
+    pygame.image.load('other/player_left/player7.png').convert_alpha(),
+    pygame.image.load('other/player_left/player8.png').convert_alpha(),
+    pygame.image.load('other/player_left/player9.png').convert_alpha(),
 ]
 walk_right = [
-    pygame.image.load(image_path + 'other/player_right/player1.png').convert_alpha(),
-    pygame.image.load(image_path + 'other/player_right/player2.png').convert_alpha(),
-    pygame.image.load(image_path + 'other/player_right/player3.png').convert_alpha(),
-    pygame.image.load(image_path + 'other/player_right/player4.png').convert_alpha(),
-    pygame.image.load(image_path + 'other/player_right/player5.png').convert_alpha(),
-    pygame.image.load(image_path + 'other/player_right/player6.png').convert_alpha(),
-    pygame.image.load(image_path + 'other/player_right/player7.png').convert_alpha(),
-    pygame.image.load(image_path + 'other/player_right/player8.png').convert_alpha(),
-    pygame.image.load(image_path + 'other/player_right/player9.png').convert_alpha(),
+    pygame.image.load('other/player_right/player1.png').convert_alpha(),
+    pygame.image.load('other/player_right/player2.png').convert_alpha(),
+    pygame.image.load('other/player_right/player3.png').convert_alpha(),
+    pygame.image.load('other/player_right/player4.png').convert_alpha(),
+    pygame.image.load('other/player_right/player5.png').convert_alpha(),
+    pygame.image.load('other/player_right/player6.png').convert_alpha(),
+    pygame.image.load('other/player_right/player7.png').convert_alpha(),
+    pygame.image.load('other/player_right/player8.png').convert_alpha(),
+    pygame.image.load('other/player_right/player9.png').convert_alpha(),
 
 
 
@@ -39,7 +37,7 @@ walk_right = [
 
 ]
 
-enemy = pygame.image.load(image_path + 'other/enemy.png').convert_alpha()
+enemy = pygame.image.load('other/enemy.png').convert_alpha()
 enemy_list_in_game = []
 
 player_anim_count = 0
@@ -53,19 +51,19 @@ player_y = 355
 is_jump = False
 jump_count = 8
 
-bg_sound = pygame.mixer.Sound(image_path + 'font/bg.mp3')
+bg_sound = pygame.mixer.Sound('font/bg.mp3')
 bg_sound.play()
 
 enemy_timer = pygame.USEREVENT + 1
 pygame.time.set_timer(enemy_timer, 2500)
 
-laber = pygame.font.Font(image_path + 'font/Raleway-SemiBold.ttf', 40)
+laber = pygame.font.Font('font/Raleway-SemiBold.ttf', 40)
 lose_label = laber.render('Вы проиграли!', False, (57, 128, 179))
 restart_label = laber.render('Играь занаво!', False, (170, 108, 179))
 restart_label_rest = restart_label.get_rect(topleft=(160, 260))
 
 bullet_left = 5
-bullet = pygame.image.load(image_path + 'other/free-icon-bullet-2218085.png').convert_alpha()
+bullet = pygame.image.load('other/free-icon-bullet-2218085.png').convert_alpha()
 bullets = []
 
 gameplay = True
